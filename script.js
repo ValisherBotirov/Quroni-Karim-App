@@ -103,7 +103,9 @@ const setAudio = async function () {
 };
 setAudio();
 
-const getAudio = function (audio) {};
+const getAudio = function (audio) {
+  document.getElementById("my-audio").setAttribute("src", `${audio}`);
+};
 
 // audio chiqishi kerak edi
 // audio = document.querySelector("audio");
