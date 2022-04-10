@@ -98,7 +98,7 @@ const setAudio = async function (number) {
   const data = await dataJson.json();
   // console.log(data.data.verses);
   const audios = data.data.verses;
-  audios.forEach(function (val) {
+  await audios.forEach(function (val) {
     // console.log(val.audio.primary);
     getAudio(val.audio.primary);
   });
