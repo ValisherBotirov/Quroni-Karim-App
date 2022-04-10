@@ -44,6 +44,7 @@ const suraName = async function () {
       id = val.id;
       tartibRaqami = 1 + suraNameArr.indexOf(val.textContent);
       getSura(tartibRaqami);
+      setAudio(tartibRaqami);
       let topilgan = suraNameArr.find((val) => val === id);
       if (val.id == topilgan) {
         val.classList.add("active");
@@ -91,8 +92,8 @@ btnArabic.addEventListener("click", function (e) {
 });
 
 // audioni qo'shish un
-const setAudio = async function () {
-  const dataJson = await fetch("https://api.quran.sutanlab.id/surah/1");
+const setAudio = async function (number) {
+  const dataJson = await fetch(`https://api.quran.sutanlab.id/surah/${number}`);
   const data = await dataJson.json();
   console.log(data.data.verses);
   const audios = data.data.verses;
