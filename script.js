@@ -23,6 +23,7 @@ const getSura = async function (number) {
   for (let el of data2) {
     // console.log(el);
     outputArabicText(el.arabic_text, el.translation);
+    console.log(el.translation);
   }
 };
 
@@ -95,7 +96,7 @@ btnArabic.addEventListener("click", function (e) {
 const setAudio = async function (number) {
   const dataJson = await fetch(`https://api.quran.sutanlab.id/surah/${number}`);
   const data = await dataJson.json();
-  console.log(data.data.verses);
+  // console.log(data.data.verses);
   const audios = data.data.verses;
   audios.forEach(function (val) {
     // console.log(val.audio.primary);
